@@ -24,12 +24,36 @@ while (choice != 4){
     
     switch choice {
     case 1:
-        print()
+       print ("\nInput 1st number")
+       var first = Int(readLine() ?? "0") ?? 0
+       print ("Input 2nd number")
+       var second = Int(readLine() ?? "0") ?? 0
+       print ("Input 3rd number")
+       var third = Int(readLine() ?? "0") ?? 0
+       print ("Input 4th number")
+       var fourth = Int(readLine() ?? "0") ?? 0
+       print ("Input 5th number")
+       var fifth = Int(readLine() ?? "0") ?? 0
+    
+       print("\n Numbers in order are: \n",assignment1(first:&first,second:&second,third:&third,fourth:&fourth,fifth:&fifth))
         
-        assignment1()
+       print ("\nPress Enter to Continue")
+       readLine()
+        
     case 2:
-        print()
-        assignment2()
+        print ("This solves for x in cuadratic equations (ax^2-bx+c=0 )")
+        
+        print ("Input a")
+        let a = Double(readLine() ?? "0")!
+        
+        print ("Input b")
+        let b = Double(readLine() ?? "0")!
+        
+        print ("Input c")
+        let c = Double(readLine() ?? "0")!
+        
+        assignment2(x:&x,y:&y)
+        
     case 3:
         print()
         assignment3()
@@ -42,24 +66,9 @@ while (choice != 4){
 }
 
 
-func assignment1() {
+func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: inout Int, fifth: inout Int) -> String{
     
     var temp:Int
-    
-    print ("Input 1st number")
-    var first = Int(readLine() ?? "0")!
-    
-    print ("Input 2nd number")
-    var second = Int(readLine() ?? "0")!
-    
-    print ("Input 3rd number")
-    var third = Int(readLine() ?? "0")!
-    
-    print ("Input 4th number")
-    var fourth = Int(readLine() ?? "0")!
-    
-    print ("Input 5th number")
-    var fifth = Int(readLine() ?? "0")!
     
     //First
     if (second<=first){
@@ -119,24 +128,14 @@ func assignment1() {
         fifth = temp
     }
     
-    print("\(first),\(second),\(third),\(fourth),\(fifth)")
+    return("\(first),\(second),\(third),\(fourth),\(fifth)")
     
 }
 
 
 
-func assignment2() {
-    print ("This solves for x in cuadratic equations (ax^2-bx+c=0 )")
-    
-    print ("Input a")
-    let a = Double(readLine() ?? "0")!
-    
-    print ("Input b")
-    let b = Double(readLine() ?? "0")!
-    
-    print ("Input c")
-    let c = Double(readLine() ?? "0")!
-    
+func assignment2() -> String{
+ 
     
     let x:Double = ((-1*b)-(((b*b)-(4*a*c)).squareRoot()))/(2*a)
     
