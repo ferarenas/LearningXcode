@@ -182,4 +182,4 @@ var b = Double(readLine() ?? "0")!
 print ("Input c")
 var c = Double(readLine() ?? "0")!
 
-var answerNeg:Double = (-1)*b+(-1)*(5.squareRoot())
+var answerNeg:Double = (-1)*b+(-1)*(6.squareRoot())
