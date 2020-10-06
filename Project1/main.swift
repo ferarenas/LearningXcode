@@ -194,10 +194,20 @@ func assignment3(){
     x=x1+x2
     z=z1+z2
     
-    t=(-x/z)
+    t=(-z/x)
     
-    print("z = \(t)x")
+    print("x = \(t)z")
     
     //second equation
+    x1 = 9
+    z1 = 9
+    y1 = 5
     
+    x = x1*t
+    
+    z1=z1+x
+    
+    y=(-z1/y1)
+    
+    print("y = \(y)z")
 }
