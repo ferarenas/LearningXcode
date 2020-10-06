@@ -160,5 +160,44 @@ func assignment2(a:Double, b:Double, c:Double){
 //ADD DOCUMENTATION
 func assignment3(){
     
+    var x1:Double = 9
+    var y1:Double = 5
+    var z1:Double = 9
+    var x2:Double = -45
+    var y2:Double = 10
+    var z2:Double = 27
+    
+    var x:Double = 0
+    var y:Double = 0
+    var z:Double = 0
+    
+    var t:Double = 0
+    
+    var commonDen:Double = 0
+   
+    //first equation
+    if (y1>y2){
+        commonDen = -(y1/y2)
+        
+        x2 = x2*commonDen
+        y2 = y2*commonDen
+        z2 = z2*commonDen
+        
+    }else{
+        commonDen = -(y2/y1)
+        
+        x1 = x1*commonDen
+        y1 = y1*commonDen
+        z1 = z1*commonDen
+    }
+    
+    x=x1+x2
+    z=z1+z2
+    
+    t=(-x/z)
+    
+    print("z = \(t)x")
+    
+    //second equation
     
 }
