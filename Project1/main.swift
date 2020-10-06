@@ -111,7 +111,7 @@ func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: 
         fifth = temp
     }
     
-    //third
+    //Third
     if (fourth<=third){
         temp = third
         third = fourth
@@ -123,7 +123,7 @@ func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: 
         fifth = temp
     }
     
-    //fourth
+    //Fourth
     if (fifth<=fourth){
         temp = fourth
         fourth = fifth
@@ -157,7 +157,7 @@ func assignment2(a:Double, b:Double, c:Double){
     
 }
 
-
+//ADD DOCUMENTATION
 func assignment3(){
     
     
