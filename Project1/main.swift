@@ -15,7 +15,7 @@ while (choice != 4){
     //Explains what the program does
     print("Which Assignment would you like to check? \n")
     print("1. Input 5 numbers and Order them from Min to Max")
-    print("2. Solve Cuadratic Ecuation")
+    print("2. Solve Cuadratic Ecuation ax^2-bx+c=0")
     print("3. (IN CONSTRUCTION)")
     print("4. Exit \n")
     print("Selection= ",terminator:"")
@@ -41,18 +41,20 @@ while (choice != 4){
        readLine()
         
     case 2:
-        print ("This solves for x in cuadratic equations (ax^2-bx+c=0 )")
         
-        print ("Input a")
+        print ("a=",terminator:"")
         let a = Double(readLine() ?? "0")!
         
-        print ("Input b")
+        print ("b=",terminator:"")
         let b = Double(readLine() ?? "0")!
         
-        print ("Input c")
+        print ("c=",terminator:"")
         let c = Double(readLine() ?? "0")!
         
-        assignment2(x:&x,y:&y)
+        assignment2(a:a, b:b, c:c)
+        
+        print ("\nPress Enter to Continue")
+        readLine()
         
     case 3:
         print()
@@ -65,7 +67,7 @@ while (choice != 4){
     }
 }
 
-
+//ADD DOCUMENTATION
 func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: inout Int, fifth: inout Int) -> String{
     
     var temp:Int
@@ -133,8 +135,8 @@ func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: 
 }
 
 
-
-func assignment2() -> String{
+//ADD DOCUMENTATION
+func assignment2(a:Double, b:Double, c:Double){
  
     
     let x:Double = ((-1*b)-(((b*b)-(4*a*c)).squareRoot()))/(2*a)
@@ -142,12 +144,13 @@ func assignment2() -> String{
     let y:Double = ((-1*b)+(((b*b)-(4*a*c)).squareRoot()))/(2*a)
     
     if (x.isNaN){
-        print("x1 is not a number")
+        print("\n x1 is not a number")
     }
     if (y.isNaN){
-        print("x2 is not a number")
+        print("\n x2 is not a number")
     }
     else {
+        print("\nThe answers are:")
         print("x1 = \((round(x*1000))/1000)")
         print("x2 = \((round(y*1000))/1000)")
     }
