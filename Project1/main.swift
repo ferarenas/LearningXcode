@@ -182,4 +182,8 @@ var b = Double(readLine() ?? "0")!
 print ("Input c")
 var c = Double(readLine() ?? "0")!
 
-var answerNeg:Double = (-1)*b+(-1)*(6.squareRoot())
+var answerNeg:Double = ((-1)*b+(-1)*((b*b-4*a*c).squareRoot()))/2*a
+
+var answerPos:Double = ((-1)*b+(+1)*((b*b-4*a*c).squareRoot()))/2*a
+
+print("\(answerNeg), \(answerPos) ")
