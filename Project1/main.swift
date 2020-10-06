@@ -167,6 +167,10 @@ func assignment3(){
     var y2:Double = 10
     var z2:Double = 27
     
+    var xTemp:Double = 0
+    var yTemp:Double = 0
+    var zTemp:Double = 0
+    
     var x:Double = 0
     var y:Double = 0
     var z:Double = 0
@@ -179,30 +183,29 @@ func assignment3(){
     if (y1>y2){
         commonDen = -(y1/y2)
         
-        x2 = x2*commonDen
-        y2 = y2*commonDen
-        z2 = z2*commonDen
+        xTemp = x2*commonDen
+        yTemp = y2*commonDen
+        zTemp = z2*commonDen
+        
+        x=x1+xTemp
+        z=z1+zTemp
         
     }else{
         commonDen = -(y2/y1)
         
-        x1 = x1*commonDen
-        y1 = y1*commonDen
-        z1 = z1*commonDen
+        xTemp = x1*commonDen
+        yTemp = y1*commonDen
+        zTemp = z1*commonDen
+        
+        x=xTemp+x2
+        z=zTemp+z2
     }
-    
-    x=x1+x2
-    z=z1+z2
     
     t=(-z/x)
     
     print("x = \(t)z")
     
     //second equation
-    x1 = 9
-    z1 = 9
-    y1 = 5
-    
     x = x1*t
     
     z1=z1+x
