@@ -57,20 +57,20 @@ while (choice != 4){
         readLine()
         
     case 3:
-        print ("\nInput a1 number")
-        var x1 = Double(readLine() ?? "0") ?? 0
-        print ("Input b1 number")
-        var y1 = Double(readLine() ?? "0") ?? 0
-        print ("Input c1 number")
-        var z1 = Double(readLine() ?? "0") ?? 0
-        print ("Input a2 number")
-        var x2 = Double(readLine() ?? "0") ?? 0
-        print ("Input b2 number")
-        var y2 = Double(readLine() ?? "0") ?? 0
-        print ("Input c2 number")
-        var z2 = Double(readLine() ?? "0") ?? 0
+        print ("\nInput x1 number")
+        var xOne = Double(readLine() ?? "0") ?? 0
+        print ("Input y1 number")
+        var yOne = Double(readLine() ?? "0") ?? 0
+        print ("Input z1 number")
+        var zOne = Double(readLine() ?? "0") ?? 0
+        print ("Input x2 number")
+        var xTwo = Double(readLine() ?? "0") ?? 0
+        print ("Input y2 number")
+        var yTwo = Double(readLine() ?? "0") ?? 0
+        print ("Input z2 number")
+        var zTwo = Double(readLine() ?? "0") ?? 0
         
-        assignment3(x1:&x1, y1:&y1, z1:&z1, x2:&x2, y2:&y2, z2:&z2)
+        assignment3(xOne:&xOne, yOne:&yOne, zOne:&zOne, xTwo:&xTwo, yTwo:&yTwo, zTwo:&zTwo)
         
         print ("\nPress Enter to Continue")
         readLine()
@@ -174,50 +174,49 @@ func assignment2(a:Double, b:Double, c:Double){
 }
 
 //ADD DOCUMENTATION
-func assignment3(x1: inout Double, y1: inout Double, z1: inout Double, x2: inout Double, y2: inout Double, z2: inout Double){
+func assignment3(xOne: inout Double, yOne: inout Double, zOne: inout Double, xTwo: inout Double, yTwo: inout Double, zTwo: inout Double){
     
-    
-    
+    //Variables to temporarily hold values
     var xTemp:Double = 0
     var zTemp:Double = 0
+    var commonDen:Double = 0
     
+    //Variables to get answers
     var x:Double = 0
     var y:Double = 0
     var z:Double = 0
     
-    
-    var commonDen:Double = 0
    
-    //first equation
-    if (y1>y2){
-        commonDen = -(y1/y2)
+    //Solve first equation
+    if (yOne>yTwo){
+        commonDen = -(yOne/yTwo)
         
-        xTemp = x2*commonDen
-        zTemp = z2*commonDen
+        xTemp = xTwo*commonDen
+        zTemp = zTwo*commonDen
         
-        x=x1+xTemp
-        z=z1+zTemp
+        x=xOne+xTemp
+        z=zOne+zTemp
         
     }else{
-        commonDen = -(y2/y1)
+        commonDen = -(yTwo/yOne)
         
-        xTemp = x1*commonDen
-        zTemp = z1*commonDen
+        xTemp = xOne*commonDen
+        zTemp = zOne*commonDen
         
-        x=xTemp+x2
-        z=zTemp+z2
+        x=xTemp+xTwo
+        z=zTemp+zTwo
     }
     
     x=(-z/x)
     
     print("x = \((round(x*1000))/1000)z")
     
-    //second equation
-    x = x1*x
+    //Solve second equation
+    x = xOne*x
     
-    z1=z1+x
+    zOne=zOne+x
     
-    y=(-z1/y1)
+    y=(-zOne/yOne)
     
     print("y = \((round(y*1000))/1000)z")
 }
