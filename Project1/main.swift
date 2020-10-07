@@ -57,8 +57,24 @@ while (choice != 4){
         readLine()
         
     case 3:
-        print()
-        assignment3()
+        print ("\nInput a1 number")
+        var x1 = Double(readLine() ?? "0") ?? 0
+        print ("Input b1 number")
+        var y1 = Double(readLine() ?? "0") ?? 0
+        print ("Input c1 number")
+        var z1 = Double(readLine() ?? "0") ?? 0
+        print ("Input a2 number")
+        var x2 = Double(readLine() ?? "0") ?? 0
+        print ("Input b2 number")
+        var y2 = Double(readLine() ?? "0") ?? 0
+        print ("Input c2 number")
+        var z2 = Double(readLine() ?? "0") ?? 0
+        
+        assignment3(x1:&x1, y1:&y1, z1:&z1, x2:&x2, y2:&y2, z2:&z2)
+        
+        print ("\nPress Enter to Continue")
+        readLine()
+        
     case 4:
         print()
         print("Thank you!")
@@ -158,24 +174,17 @@ func assignment2(a:Double, b:Double, c:Double){
 }
 
 //ADD DOCUMENTATION
-func assignment3(){
+func assignment3(x1: inout Double, y1: inout Double, z1: inout Double, x2: inout Double, y2: inout Double, z2: inout Double){
     
-    var x1:Double = 9
-    var y1:Double = 5
-    var z1:Double = 9
-    var x2:Double = -45
-    var y2:Double = 10
-    var z2:Double = 27
+    
     
     var xTemp:Double = 0
-    var yTemp:Double = 0
     var zTemp:Double = 0
     
     var x:Double = 0
     var y:Double = 0
     var z:Double = 0
     
-    var t:Double = 0
     
     var commonDen:Double = 0
    
@@ -184,7 +193,6 @@ func assignment3(){
         commonDen = -(y1/y2)
         
         xTemp = x2*commonDen
-        yTemp = y2*commonDen
         zTemp = z2*commonDen
         
         x=x1+xTemp
@@ -194,23 +202,22 @@ func assignment3(){
         commonDen = -(y2/y1)
         
         xTemp = x1*commonDen
-        yTemp = y1*commonDen
         zTemp = z1*commonDen
         
         x=xTemp+x2
         z=zTemp+z2
     }
     
-    t=(-z/x)
+    x=(-z/x)
     
-    print("x = \(t)z")
+    print("x = \((round(x*1000))/1000)z")
     
     //second equation
-    x = x1*t
+    x = x1*x
     
     z1=z1+x
     
     y=(-z1/y1)
     
-    print("y = \(y)z")
+    print("y = \((round(y*1000))/1000)z")
 }
