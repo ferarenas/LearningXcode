@@ -16,8 +16,11 @@ while (choice != 99){
     print("Which Assignment would you like to check? \n")
     print("1. Input 5 numbers and Order them from Min to Max")
     print("2. Solve Cuadratic Ecuation ax^2-bx+c=0")
-    print("3. (IN CONSTRUCTION)")
-    print("4. (IN CONSTRUCTION)")
+    print("3. Solve 2 equations with 3 variables")
+    print("4. Count up to a natural number")
+    print("5. Display Multiplication Table")
+    print("6. Add all natural numbers up to n")
+    print("7. Calculate average from all numbers from 1 to n")
     print("99. Exit \n")
     print("Selection= ",terminator:"")
     
@@ -80,6 +83,26 @@ while (choice != 99){
         assignment4()
         print ("\nPress Enter to Continue")
         _ = readLine()
+        
+    case 5:
+    assignment5()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+        
+    case 6:
+    assignment6()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+        
+    case 7:
+    assignment7()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+        
+    case 8:
+    assignment8()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
         
     case 99:
         print()
@@ -242,20 +265,79 @@ func assignment3(xOne: inout Double, yOne: inout Double, zOne: inout Double, xTw
 
 func assignment4 () {
     
-    print ("Input a natural number: ",terminator:"" )
-    var number = Int(readLine() ?? "0") ?? 0
-    
     var n=0
     
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+
     while (n < number) {
        n+=1
-        
-        if (n != number){
-        print("\(n), ", terminator:"")
-        }else{
-            print("\(n). ", terminator:"")
-        }
+        n != number ? print("\(n), ", terminator:"") : print("\(n). ", terminator:"")
     }
+}
+
+func assignment5 () {
     
+    var n=1
     
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+
+    while (n <= 10) {
+        print("\(number) x \(n) = \(number*n)")
+        n+=1
+    }
+}
+
+func assignment6 () {
+    
+    var n:Int = 1
+    var answer: Int = 0
+    
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+
+    while (n <= number) {
+        answer=answer+n
+        n != number ? print("\(n) + ", terminator:"") : print("\(n) = \(answer)", terminator:"")
+        n+=1
+    }
+}
+
+func assignment7 () {
+    
+    var n:Int = 1
+    var answer: Int = 0
+    
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+    
+    print("(", terminator:"")
+
+    while (n <= number) {
+        answer=answer+n
+        n != number ? print("\(n) + ", terminator:"") : print("\(n)) / \(n) = \(Double(answer)/Double(n))", terminator:"")
+        n+=1
+    }
+}
+
+func assignment8 () {
+    
+    var n:Int = 1
+    var answer: Int = 0
+    
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+
+    while (n <= number) {
+        answer=answer+n
+        
+        if (n == (number-1) || n == number){
+            print("\(n) = \(answer)", terminator:"")
+        }else{
+            print("\(n) + ", terminator:"")
+        }
+        
+        n+=2
+    }
 }
