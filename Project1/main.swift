@@ -10,14 +10,15 @@ import Foundation
 
 var choice:Int = 0
 
-while (choice != 4){
+while (choice != 99){
     
     //Explains what the program does
     print("Which Assignment would you like to check? \n")
     print("1. Input 5 numbers and Order them from Min to Max")
     print("2. Solve Cuadratic Ecuation ax^2-bx+c=0")
     print("3. (IN CONSTRUCTION)")
-    print("4. Exit \n")
+    print("4. (IN CONSTRUCTION)")
+    print("99. Exit \n")
     print("Selection= ",terminator:"")
     
     choice = Int(readLine() ?? "0")!
@@ -38,7 +39,7 @@ while (choice != 4){
        print("\n Numbers in order are: \n",assignment1(first:&first,second:&second,third:&third,fourth:&fourth,fifth:&fifth))
         
        print ("\nPress Enter to Continue")
-       readLine()
+       _ = readLine()
         
     case 2:
         
@@ -54,7 +55,7 @@ while (choice != 4){
         assignment2(a:a, b:b, c:c)
         
         print ("\nPress Enter to Continue")
-        readLine()
+        _ = readLine()
         
     case 3:
         print ("\nInput x1 number")
@@ -73,17 +74,29 @@ while (choice != 4){
         assignment3(xOne:&xOne, yOne:&yOne, zOne:&zOne, xTwo:&xTwo, yTwo:&yTwo, zTwo:&zTwo)
         
         print ("\nPress Enter to Continue")
-        readLine()
+        _ = readLine()
         
     case 4:
+        assignment4()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
+        
+    case 99:
         print()
         print("Thank you!")
+        
     default:
         print("Number needs to be between 1 and 3")
     }
 }
 
-//ADD DOCUMENTATION
+/**
+Asks the user for 5 numbers and then orders them from Min to Max
+
+- Parameter recipient: The 5 numbers
+
+- Returns: Ordered list of numbers on a csv format
+*/
 func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: inout Int, fifth: inout Int) -> String{
     
     var temp:Int
@@ -151,7 +164,12 @@ func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: 
 }
 
 
-//ADD DOCUMENTATION
+/**
+Asks the user for the values to create a cuadratic equation
+
+- Parameter recipient: 3 variables
+
+*/
 func assignment2(a:Double, b:Double, c:Double){
  
     
@@ -219,4 +237,25 @@ func assignment3(xOne: inout Double, yOne: inout Double, zOne: inout Double, xTw
     y=(-zOne/yOne)
     
     print("y = \((round(y*1000))/1000)z")
+}
+
+
+func assignment4 () {
+    
+    print ("Input a natural number: ",terminator:"" )
+    var number = Int(readLine() ?? "0") ?? 0
+    
+    var n=0
+    
+    while (n < number) {
+       n+=1
+        
+        if (n != number){
+        print("\(n), ", terminator:"")
+        }else{
+            print("\(n). ", terminator:"")
+        }
+    }
+    
+    
 }
