@@ -17,10 +17,15 @@ while (choice != 99){
     print("1. Input 5 numbers and Order them from Min to Max")
     print("2. Solve Cuadratic Ecuation ax^2-bx+c=0")
     print("3. Solve 2 equations with 3 variables")
+    //Loops
+    print("LOOPS:")
     print("4. Count up to a natural number")
     print("5. Display Multiplication Table")
     print("6. Add all natural numbers up to n")
     print("7. Calculate average from all numbers from 1 to n")
+    print("8. Sum of odd numbers to n")
+    print("9. Average of all even numbers")
+    
     print("99. Exit \n")
     print("Selection= ",terminator:"")
     
@@ -101,6 +106,26 @@ while (choice != 99){
         
     case 8:
     assignment8()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+        
+    case 9:
+    assignment9()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+        
+    case 10:
+     assignment10()
+     print ("\nPress Enter to Continue")
+     _ = readLine()
+        
+    case 11:
+    assignment11()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+
+    case 12:
+    assignment12()
     print ("\nPress Enter to Continue")
     _ = readLine()
         
@@ -331,13 +356,72 @@ func assignment8 () {
 
     while (n <= number) {
         answer=answer+n
-        
-        if (n == (number-1) || n == number){
-            print("\(n) = \(answer)", terminator:"")
-        }else{
-            print("\(n) + ", terminator:"")
-        }
-        
+        n == (number-1) || n == number ? print("\(n) = \(answer)", terminator:"") : print("\(n) + ", terminator:"")
         n+=2
     }
+}
+
+func assignment9 () {
+    
+    var n:Int = 1
+    var answer: Int = 0
+    
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+
+    while (n <= number) {
+        answer=answer+n
+        n == (number-1) || n == number ? print("\(n) = \(answer)", terminator:"") : print("\(n) + ", terminator:"")
+        n+=2
+    }
+}
+
+func assignment10 () {
+    
+    var n:Int = 2
+    var counter:Int = 0
+    var sum:Double = 0
+    
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+
+    print("(", terminator:"")
+    
+    while (n <= number) {
+        if (n%2 == 0){
+            counter+=1
+            sum=sum+Double(n)
+            n == (number-1) || n == number ? print("\(n)) / \(counter) = \(sum/Double(counter))", terminator:"") : print("\(n) + ", terminator: "")
+        }
+        n+=2
+    }
+}
+
+func assignment11 () {
+    
+    var n:Int = 1
+    
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+    
+    while (n <= number) {
+        if (number%n == 0) {
+            n != number ? print("\(n), ", terminator:"") : print("\(n)", terminator:"")
+        }
+    n=n+1
+    }
+}
+
+func assignment12 () {
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+    
+    for _ in 1...number {
+        print()
+
+        for _ in 1...number{
+           print("* ", terminator:"")
+        }
+    }
+    print()
 }
