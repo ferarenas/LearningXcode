@@ -29,7 +29,8 @@ while (choice != 99){
     print("99. Exit \n")
     print("Selection= ",terminator:"")
     
-    choice = Int(readLine() ?? "0")!
+    choice = 17
+        //Int(readLine() ?? "0")!
     
     switch choice {
     case 1:
@@ -136,6 +137,16 @@ while (choice != 99){
         
     case 14:
     assignment14()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+    
+    case 15:
+    assignment15()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+        
+    case 16:
+    assignment16()
     print ("\nPress Enter to Continue")
     _ = readLine()
         
@@ -444,12 +455,9 @@ func assignment13 () {
         print("* ", terminator:"")
         
         for n in 1...number-1{
-            if (i == 1 || i == number){
+            if (i == 1 || i == number || n == number-1){
             print("* ", terminator:"")
-            }
-            else if (n == number-1){
-                print("*", terminator:"")
-            }else {
+            } else {
                 print("  ", terminator:"")
             }
         }
@@ -465,19 +473,46 @@ func assignment14 () {
         print("* ", terminator:"")
         
         for n in 1...number-1{
-            if (i == 1 || i == number){
-            print("* ", terminator:"")
-            }else if (n==i-1){
-                print("* ", terminator:"")
-            }else if  (n == number-1) {
-                print("* ", terminator:"")
-            }else if (n+i == number){
-                print("* ", terminator:"")
-            }
-            else {
-                print("  ", terminator:"")
-            }
+            i == 1 || i == number || n == i-1 || n == number-1 || n+i == number ? print("* ", terminator:"") : print("  ", terminator:"")
         }
         print()
     }
 }
+
+func assignment15 () {
+    print ("Input number of rows: ",terminator:"" )
+    let rows = Int(readLine() ?? "0") ?? 0
+    
+    print ("Input number of columns: ",terminator:"" )
+    let columns = Int(readLine() ?? "0") ?? 0
+    
+    for _ in 1...rows {
+        print()
+
+        for _ in 1...columns{
+           print("* ", terminator:"")
+        }
+    }
+    print()
+}
+
+func assignment16 () {
+    print ("Input number of rows: ",terminator:"" )
+    let rows = Int(readLine() ?? "0") ?? 0
+    
+    print ("Input number of columns: ",terminator:"" )
+    let columns = Int(readLine() ?? "0") ?? 0
+        
+        for i in 1...rows {
+            print("* ", terminator:"")
+            
+            for n in 1...columns-1{
+                if (i == 1 || i == columns || n == columns-1 || i == rows){
+                print("* ", terminator:"")
+                } else {
+                    print("  ", terminator:"")
+                }
+            }
+            print()
+        }
+    }
