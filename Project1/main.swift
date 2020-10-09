@@ -29,151 +29,106 @@ while (choice != 99){
     print("99. Exit \n")
     print("Selection= ",terminator:"")
     
-    choice = 17
-        //Int(readLine() ?? "0")!
+    choice = Int(readLine() ?? "0")!
     
     switch choice {
-    case 1:
-       print ("\nInput 1st number")
-       var first = Int(readLine() ?? "0") ?? 0
-       print ("Input 2nd number")
-       var second = Int(readLine() ?? "0") ?? 0
-       print ("Input 3rd number")
-       var third = Int(readLine() ?? "0") ?? 0
-       print ("Input 4th number")
-       var fourth = Int(readLine() ?? "0") ?? 0
-       print ("Input 5th number")
-       var fifth = Int(readLine() ?? "0") ?? 0
-    
-       print("\n Numbers in order are: \n",assignment1(first:&first,second:&second,third:&third,fourth:&fourth,fifth:&fifth))
         
-       print ("\nPress Enter to Continue")
-       _ = readLine()
+    case 1:
+       assignment1()
+       enterToContinue()
         
     case 2:
-        
-        print ("a=",terminator:"")
-        let a = Double(readLine() ?? "0")!
-        
-        print ("b=",terminator:"")
-        let b = Double(readLine() ?? "0")!
-        
-        print ("c=",terminator:"")
-        let c = Double(readLine() ?? "0")!
-        
-        assignment2(a:a, b:b, c:c)
-        
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        assignment2()
+        enterToContinue()
         
     case 3:
-        print ("\nInput x1 number")
-        var xOne = Double(readLine() ?? "0") ?? 0
-        print ("Input y1 number")
-        var yOne = Double(readLine() ?? "0") ?? 0
-        print ("Input z1 number")
-        var zOne = Double(readLine() ?? "0") ?? 0
-        print ("Input x2 number")
-        var xTwo = Double(readLine() ?? "0") ?? 0
-        print ("Input y2 number")
-        var yTwo = Double(readLine() ?? "0") ?? 0
-        print ("Input z2 number")
-        var zTwo = Double(readLine() ?? "0") ?? 0
-        
-        assignment3(xOne:&xOne, yOne:&yOne, zOne:&zOne, xTwo:&xTwo, yTwo:&yTwo, zTwo:&zTwo)
-        
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        assignment3()
+        enterToContinue()
         
     case 4:
         assignment4()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 5:
         assignment5()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 6:
         assignment6()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 7:
         assignment7()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 8:
         assignment8()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 9:
         assignment9()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 10:
          assignment10()
-         print ("\nPress Enter to Continue")
-         _ = readLine()
+         enterToContinue()
         
     case 11:
         assignment11()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
 
     case 12:
         assignment12()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 13:
         assignment13()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 14:
         assignment14()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
     
     case 15:
         assignment15()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 16:
         assignment16()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
     
     case 17:
         assignment17()
-        print ("\nPress Enter to Continue")
-        _ = readLine()
+        enterToContinue()
         
     case 99:
         print()
         print("Thank you!")
         
     default:
-        print("Number needs to be between 1 and 3")
+        print("Number needs to be between 1 and ...")
     }
 }
 
-/**
-Asks the user for 5 numbers and then orders them from Min to Max
+func enterToContinue(){
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+}
 
-- Parameter recipient: The 5 numbers
-
-- Returns: Ordered list of numbers on a csv format
-*/
-func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: inout Int, fifth: inout Int) -> String{
+func assignment1(){
     
     var temp:Int
+    
+    print ("\nInput 1st number")
+    var first = Int(readLine() ?? "0") ?? 0
+    print ("Input 2nd number")
+    var second = Int(readLine() ?? "0") ?? 0
+    print ("Input 3rd number")
+    var third = Int(readLine() ?? "0") ?? 0
+    print ("Input 4th number")
+    var fourth = Int(readLine() ?? "0") ?? 0
+    print ("Input 5th number")
+    var fifth = Int(readLine() ?? "0") ?? 0
     
     //First
     if (second<=first){
@@ -233,19 +188,20 @@ func assignment1(first: inout Int, second: inout Int, third: inout Int, fourth: 
         fifth = temp
     }
     
-    return("\(first),\(second),\(third),\(fourth),\(fifth)")
+    print("\n Numbers in order are: \(first),\(second),\(third),\(fourth),\(fifth)")
     
 }
 
-
-/**
-Asks the user for the values to create a cuadratic equation
-
-- Parameter recipient: 3 variables
-
-*/
-func assignment2(a:Double, b:Double, c:Double){
+func assignment2(){
  
+    print ("a=",terminator:"")
+    let a = Double(readLine() ?? "0")!
+    
+    print ("b=",terminator:"")
+    let b = Double(readLine() ?? "0")!
+    
+    print ("c=",terminator:"")
+    let c = Double(readLine() ?? "0")!
     
     let x:Double = ((-1*b)-(((b*b)-(4*a*c)).squareRoot()))/(2*a)
     
@@ -265,8 +221,7 @@ func assignment2(a:Double, b:Double, c:Double){
     
 }
 
-//ADD DOCUMENTATION
-func assignment3(xOne: inout Double, yOne: inout Double, zOne: inout Double, xTwo: inout Double, yTwo: inout Double, zTwo: inout Double){
+func assignment3(){
     
     //Variables to temporarily hold values
     var xTemp:Double = 0
@@ -278,7 +233,19 @@ func assignment3(xOne: inout Double, yOne: inout Double, zOne: inout Double, xTw
     var y:Double = 0
     var z:Double = 0
     
-   
+   print ("\nInput x1 number")
+   let xOne = Double(readLine() ?? "0") ?? 0
+   print ("Input y1 number")
+   let yOne = Double(readLine() ?? "0") ?? 0
+   print ("Input z1 number")
+   var zOne = Double(readLine() ?? "0") ?? 0
+   print ("Input x2 number")
+   let xTwo = Double(readLine() ?? "0") ?? 0
+   print ("Input y2 number")
+   let yTwo = Double(readLine() ?? "0") ?? 0
+   print ("Input z2 number")
+   let zTwo = Double(readLine() ?? "0") ?? 0
+    
     //Solve first equation
     if (yOne>yTwo){
         commonDen = -(yOne/yTwo)
@@ -312,7 +279,6 @@ func assignment3(xOne: inout Double, yOne: inout Double, zOne: inout Double, xTw
     
     print("y = \((round(y*1000))/1000)z")
 }
-
 
 func assignment4 () {
     
