@@ -91,64 +91,69 @@ while (choice != 99){
         _ = readLine()
         
     case 5:
-    assignment5()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment5()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 6:
-    assignment6()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment6()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 7:
-    assignment7()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment7()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 8:
-    assignment8()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment8()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 9:
-    assignment9()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment9()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 10:
-     assignment10()
-     print ("\nPress Enter to Continue")
-     _ = readLine()
+         assignment10()
+         print ("\nPress Enter to Continue")
+         _ = readLine()
         
     case 11:
-    assignment11()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment11()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
 
     case 12:
-    assignment12()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment12()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 13:
-    assignment13()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment13()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 14:
-    assignment14()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment14()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
     
     case 15:
-    assignment15()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment15()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 16:
-    assignment16()
-    print ("\nPress Enter to Continue")
-    _ = readLine()
+        assignment16()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
+    
+    case 17:
+        assignment17()
+        print ("\nPress Enter to Continue")
+        _ = readLine()
         
     case 99:
         print()
@@ -515,4 +520,25 @@ func assignment16 () {
             }
             print()
         }
-    }
+}
+
+func assignment17 () {
+    print ("Input number of rows: ",terminator:"" )
+    let rows = Int(readLine() ?? "0") ?? 0
+    
+    print ("Input number of columns: ",terminator:"" )
+    let columns = Int(readLine() ?? "0") ?? 0
+        
+        for i in 1...rows {
+            print("* ", terminator:"")
+            
+            for n in 1...columns-1{
+                if (i == 1 || i == columns || n == columns-1 || i == rows){
+                print("* ", terminator:"")
+                } else {
+                    print("  ", terminator:"")
+                }
+            }
+            print()
+        }
+}
