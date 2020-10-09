@@ -129,6 +129,11 @@ while (choice != 99){
     print ("\nPress Enter to Continue")
     _ = readLine()
         
+    case 13:
+    assignment13()
+    print ("\nPress Enter to Continue")
+    _ = readLine()
+        
     case 99:
         print()
         print("Thank you!")
@@ -424,4 +429,23 @@ func assignment12 () {
         }
     }
     print()
+}
+
+func assignment13 () {
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+    
+    for i in 1...number {
+        print("* ", terminator:"")
+        
+        for n in 1...number-1{
+            if (i == 1 || i == number){
+            print("* ", terminator:"")
+            }
+            else{
+                print("  ", terminator:"")
+            }
+        }
+        print()
+    }
 }
