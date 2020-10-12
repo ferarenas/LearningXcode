@@ -13,93 +13,48 @@ var choice:Int = 0
 while (choice != 99){
     
     //Explains what the program does
-    print("Which Assignment would you like to check? \n")
-    print("1. Input 5 numbers and Order them from Min to Max")
-    print("2. Solve Cuadratic Ecuation ax^2-bx+c=0")
-    print("3. Solve 2 equations with 3 variables")
-    //Loops
-    print("LOOPS:")
-    print("4. Count up to a natural number")
-    print("5. Display Multiplication Table")
-    print("6. Add all natural numbers up to n")
-    print("7. Calculate average from all numbers from 1 to n")
-    print("8. Sum of odd numbers to n")
-    print("9. Average of all even numbers")
+//    print("Which Assignment would you like to check? \n")
+//    print("1. Input 5 numbers and Order them from Min to Max")
+//    print("2. Solve Cuadratic Ecuation ax^2-bx+c=0")
+//    print("3. Solve 2 equations with 3 variables")
+//    //Loops
+//    print("LOOPS:")
+//    print("4. Count up to a natural number")
+//    print("5. Display Multiplication Table")
+//    print("6. Add all natural numbers up to n")
+//    print("7. Calculate average from all numbers from 1 to n")
+//    print("8. Sum of odd numbers to n")
+//    print("9. Average of all even numbers")
+//
+//    print("99. Exit \n")
+//    print("Selection= ",terminator:"")
     
-    print("99. Exit \n")
-    print("Selection= ",terminator:"")
-    
-    choice = Int(readLine() ?? "0")!
+    choice =
+    19
+    print()
+    //Int(readLine() ?? "0")!
     
     switch choice {
         
-    case 1:
-       assignment1()
-       enterToContinue()
-        
-    case 2:
-        assignment2()
-        enterToContinue()
-        
-    case 3:
-        assignment3()
-        enterToContinue()
-        
-    case 4:
-        assignment4()
-        enterToContinue()
-        
-    case 5:
-        assignment5()
-        enterToContinue()
-        
-    case 6:
-        assignment6()
-        enterToContinue()
-        
-    case 7:
-        assignment7()
-        enterToContinue()
-        
-    case 8:
-        assignment8()
-        enterToContinue()
-        
-    case 9:
-        assignment9()
-        enterToContinue()
-        
-    case 10:
-         assignment10()
-         enterToContinue()
-        
-    case 11:
-        assignment11()
-        enterToContinue()
-
-    case 12:
-        assignment12()
-        enterToContinue()
-        
-    case 13:
-        assignment13()
-        enterToContinue()
-        
-    case 14:
-        assignment14()
-        enterToContinue()
-    
-    case 15:
-        assignment15()
-        enterToContinue()
-        
-    case 16:
-        assignment16()
-        enterToContinue()
-    
-    case 17:
-        assignment17()
-        enterToContinue()
+    case 1: assignment1()
+    case 2: assignment2()
+    case 3: assignment3()
+    case 4: assignment4()
+    case 5: assignment5()
+    case 6: assignment6()
+    case 7: assignment7()
+    case 8: assignment8()
+    case 9: assignment9()
+    case 10: assignment10()
+    case 11: assignment11()
+    case 12: assignment12()
+    case 13: assignment13()
+    case 14: assignment14()
+    case 15: assignment15()
+    case 16: assignment16()
+    case 17: assignment17()
+    case 18: assignment18()
+    case 19: assignment19()
         
     case 99:
         print()
@@ -108,6 +63,7 @@ while (choice != 99){
     default:
         print("Number needs to be between 1 and ...")
     }
+    enterToContinue()
 }
 
 func enterToContinue(){
@@ -489,22 +445,62 @@ func assignment16 () {
 }
 
 func assignment17 () {
-    print ("Input number of rows: ",terminator:"" )
-    let rows = Int(readLine() ?? "0") ?? 0
-    
-    print ("Input number of columns: ",terminator:"" )
-    let columns = Int(readLine() ?? "0") ?? 0
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
         
-        for i in 1...rows {
-            print("* ", terminator:"")
-            
-            for n in 1...columns-1{
-                if (i == 1 || i == columns || n == columns-1 || i == rows){
-                print("* ", terminator:"")
-                } else {
-                    print("  ", terminator:"")
-                }
+        for n in 1...number {
+           print("* ", terminator:"")
+
+            for i in 1...number-1{
+                i < n ? print("* ", terminator:"") : print("  ", terminator:"")
             }
             print()
         }
+}
+
+func assignment18 () {
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+    
+    var counter: Int = 0
+        
+        for _ in 1...number {
+           print("* ", terminator:"")
+            counter+=1
+            
+            if (counter<number){
+                for _ in 1...number-counter{
+                    print("* ", terminator:"")
+                    }
+            }
+            print()
+        }
+}
+
+func assignment19 () {
+    print ("Input natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+    
+    let totalSpaces:Int = number+(number-1)
+    
+    for i in 1...number {
+        for n in 1...totalSpaces{
+            if (i%2==0) {
+                if (n%2 == 0){
+                   print("*", terminator:"")
+                }else {
+                    print(" ", terminator:"")
+                }
+            }else {
+                if (n%2 == 1){
+                   print("*", terminator:"")
+                }else {
+                    print(" ", terminator:"")
+                 }
+             }
+            
+        }
+        print()
+    }
+    
 }
