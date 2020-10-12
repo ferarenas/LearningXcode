@@ -482,24 +482,29 @@ func assignment19 () {
     let number = Int(readLine() ?? "0") ?? 0
     
     let totalSpaces:Int = number+(number-1)
+    var negSpacesLeft:Int = totalSpaces-number
     
     for i in 1...number {
         for n in 1...totalSpaces{
-            if (i%2==0) {
-                if (n%2 == 0){
-                   print("*", terminator:"")
+            if (n>negSpacesLeft){
+                if (i%2==0) {
+                    if (n%2 == 0){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                    }
                 }else {
-                    print(" ", terminator:"")
-                }
-            }else {
-                if (n%2 == 1){
-                   print("*", terminator:"")
-                }else {
-                    print(" ", terminator:"")
+                    if (n%2 == 1){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                     }
                  }
-             }
-            
+            }else{
+                print(" ", terminator:"")
+            }
         }
+        negSpacesLeft-=1
         print()
     }
     
