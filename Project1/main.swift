@@ -30,7 +30,7 @@ while (choice != 99){
 //    print("Selection= ",terminator:"")
     
     choice =
-    19
+    20
     print()
     //Int(readLine() ?? "0")!
     
@@ -55,6 +55,7 @@ while (choice != 99){
     case 17: assignment17()
     case 18: assignment18()
     case 19: assignment19()
+    case 20: assignment20()
         
     case 99:
         print()
@@ -514,5 +515,73 @@ func assignment19 () {
         negSpacesLeft-=1
         print()
     }
+}
+
+func assignment20 () {
+    print ("Input natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
     
+    let totalSpaces:Int = number+(number-1)
+    var negSpacesLeft:Int = 0
+    var negSpacesRight:Int = 0
+    
+    for i in 1...number {
+        
+        negSpacesLeft = totalSpaces-number-i+1
+        negSpacesRight = negSpacesLeft+(i*2)
+        
+        for n in 1...totalSpaces{
+            
+            if (n>negSpacesLeft && n<negSpacesRight){
+                
+                if (i%2==0) {
+                    if (n%2 == 0){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                     }
+                }else {
+                    if (n%2 == 1){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                     }
+                 }
+                
+            }else{
+                print(" ", terminator:"")
+            }
+        }
+        print()
+    }
+
+    for i in 1...number-1 {
+        
+        negSpacesLeft = i
+        negSpacesRight = totalSpaces-i+1
+        
+        for n in 1...totalSpaces{
+            
+            if (n>negSpacesLeft && n<negSpacesRight){
+                
+                if (i%2==1) {
+                    if (n%2 == 0){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                     }
+                }else {
+                    if (n%2 == 1){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                     }
+                 }
+                
+            }else{
+                print(" ", terminator:"")
+            }
+        }
+        print()
+    }
 }
