@@ -483,16 +483,22 @@ func assignment19 () {
     
     let totalSpaces:Int = number+(number-1)
     var negSpacesLeft:Int = totalSpaces-number
+    var negSpacesRight:Int = 0
     
     for i in 1...number {
+        
+        negSpacesRight = negSpacesLeft+(i*2)
+        
         for n in 1...totalSpaces{
-            if (n>negSpacesLeft){
+            
+            if (n>negSpacesLeft && n<negSpacesRight){
+                
                 if (i%2==0) {
                     if (n%2 == 0){
                        print("*", terminator:"")
                     }else {
                         print(" ", terminator:"")
-                    }
+                     }
                 }else {
                     if (n%2 == 1){
                        print("*", terminator:"")
@@ -500,6 +506,7 @@ func assignment19 () {
                         print(" ", terminator:"")
                      }
                  }
+                
             }else{
                 print(" ", terminator:"")
             }
