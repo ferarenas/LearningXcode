@@ -38,6 +38,10 @@ while (choice != 99){
     case 14: assignment14()
     case 15: assignment15()
     case 16: assignment16()
+    case 17: assignment17()
+    case 18: assignment18()
+    case 19: assignment19()
+    case 20: assignment20()
 
     case 99:
         print()
@@ -112,7 +116,6 @@ func assignment4 () {
         n+=1
     }
 }
-
 
 func assignment5 () {
     
@@ -390,3 +393,89 @@ func assignment16 () {
     }
 }
 
+func assignment17 () {
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+        
+        for n in 1...number {
+           print("1", terminator:"")
+
+            for i in 1...number-1{
+                i < n ? print(i+1, terminator:"") : print("", terminator:"")
+            }
+            print()
+        }
+}
+
+func assignment18 () {
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+        
+        for n in 1...number {
+           print(n, terminator:"")
+
+            for i in 1...number-1{
+                i < n ? print(n, terminator:"") : print("", terminator:"")
+            }
+            print()
+        }
+}
+
+func assignment19 () {
+    print ("Input a natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+            
+    var counter:Int = 1
+    
+            for n in 1...number {
+                for i in 1...number{
+                    if (i <= n){
+                        print(counter, terminator:"")
+                        counter+=1
+                    }else {
+                        print("  ", terminator:"")
+                        
+                    }
+                }
+                print()
+            }
+}
+
+func assignment20 () {
+    print ("Input natural number: ",terminator:"" )
+    let number = Int(readLine() ?? "0") ?? 0
+    
+    let totalSpaces:Int = number+(number-1)
+    var negSpacesLeft:Int = totalSpaces-number
+    var negSpacesRight:Int = 0
+    
+    for i in 1...number {
+        
+        negSpacesRight = negSpacesLeft+(i*2)
+        
+        for n in 1...totalSpaces{
+            
+            if (n>negSpacesLeft && n<negSpacesRight){
+                
+                if (i%2==0) {
+                    if (n%2 == 0){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                     }
+                }else {
+                    if (n%2 == 1){
+                       print("*", terminator:"")
+                    }else {
+                        print(" ", terminator:"")
+                     }
+                 }
+                
+            }else{
+                print(" ", terminator:"")
+            }
+        }
+        negSpacesLeft-=1
+        print()
+    }
+}
