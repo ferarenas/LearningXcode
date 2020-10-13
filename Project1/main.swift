@@ -42,7 +42,18 @@ while (choice != 99){
     case 18: assignment18()
     case 19: assignment19()
     case 20: assignment20()
-
+    case 21: assignment21()
+    case 22: assignment22()
+    case 23: assignment23()
+    case 24: assignment24()
+    case 25: assignment25()
+    case 26: assignment26()
+    case 27: assignment27()
+    case 28: assignment28()
+    case 29: assignment29()
+    case 30: assignment30()
+    case 31: assignment31()
+        
     case 99:
         print()
         print("Thank you!")
@@ -441,41 +452,80 @@ func assignment19 () {
             }
 }
 
-func assignment20 () {
-    print ("Input natural number: ",terminator:"" )
-    let number = Int(readLine() ?? "0") ?? 0
+func assignment20() {
     
-    let totalSpaces:Int = number+(number-1)
-    var negSpacesLeft:Int = totalSpaces-number
-    var negSpacesRight:Int = 0
+    print ("Input a natural number: ",terminator:"" )
+    let n = Int(readLine() ?? "0") ?? 0
     
-    for i in 1...number {
-        
-        negSpacesRight = negSpacesLeft+(i*2)
-        
-        for n in 1...totalSpaces{
-            
-            if (n>negSpacesLeft && n<negSpacesRight){
-                
-                if (i%2==0) {
-                    if (n%2 == 0){
-                       print("*", terminator:"")
-                    }else {
-                        print(" ", terminator:"")
-                     }
-                }else {
-                    if (n%2 == 1){
-                       print("*", terminator:"")
-                    }else {
-                        print(" ", terminator:"")
-                     }
-                 }
-                
-            }else{
-                print(" ", terminator:"")
+    var counter:Int = 1
+    
+    for i in 0...n {
+
+        var line = ""
+        var space = ""
+
+        for _ in 0..<(n-i) {
+            space = "\(space) "
+
+        }
+
+        for j in 0..<n {
+
+            if  j < i {
+                line = "\(line) \(counter)"
+                counter+=1
             }
         }
-        negSpacesLeft-=1
-        print()
+        print("\(space)\(line)")
+
     }
 }
+
+func assignment21() {
+    print("IDK")
+}
+
+func assignment22() {
+    
+}
+
+func assignment23() {
+    
+}
+
+func assignment24() {
+    
+}
+
+func assignment25() {
+    
+}
+
+func assignment26() {
+    
+}
+
+func assignment27() {
+    
+}
+
+func assignment28() {
+    
+}
+
+func assignment29() {
+    
+}
+
+func assignment30() {
+    
+}
+
+func assignment31() {
+    
+}
+
+func assignment32() {
+    
+}
+
