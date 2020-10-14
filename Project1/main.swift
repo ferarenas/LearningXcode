@@ -652,7 +652,7 @@ func assignment28() {
     let input = Int(readLine() ?? "0") ?? 0
     
     var number: String = ""
-    var answer:Int = 0
+    var answer: Int = 0
     
     for n in 0...input-1 {
         number = number+"1"
@@ -671,7 +671,29 @@ func assignment28() {
 }
 
 func assignment29() {
+    print ("Input natural number: ",terminator:"" )
+    let input = Int(readLine() ?? "0") ?? 0
     
+    var answer:String = ""
+    var counter:Int
+
+    for n in 2...input{
+        
+        counter = 0
+        
+        for i in 1...n{
+            
+            if (n%i == 0){
+                counter += 1
+            }
+            
+        }
+        if (counter<=2) {
+            answer = "\(answer) \(n)"
+        }
+        
+    }
+    print(answer)
 }
 
 func assignment30() {
