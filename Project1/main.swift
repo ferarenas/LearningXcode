@@ -25,48 +25,55 @@ while (choice != 99){
     
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     print("Which Assignment would you like to check?")
-    print("- \"99\" to Exit \n")
-    print("Selection= ",terminator:"")
+    print("\n    Selection= ",terminator:"")
     
-    choice =
-        //   20; print()
-        Int(readLine() ?? "0") ?? 0
+    choice = Int(readLine() ?? "0") ?? 0
+    
+    print ()
     
     switch choice {
-    case 1: assignment1()
-    case 2: assignment2()
-    case 3: assignment3()
-    case 4: assignment4()
-    case 5: assignment5()
-    case 6: assignment6()
-    case 7: assignment7()
-    case 8: assignment8()
-    case 9: assignment9()
-    case 10: assignment10()
-    case 11: assignment11()
-    case 12: assignment12()
-    case 13: assignment13()
-    case 14: assignment14()
-    case 15: assignment15()
-    case 16: assignment16()
-    case 17: assignment17()
-    case 18: assignment18()
-    case 19: assignment19()
-    case 20: assignment20()
-    case 21: assignment21()
-    case 22: assignment22()
-    case 23: assignment23()
-    case 24: assignment24()
-    case 25: assignment25()
-    case 26: assignment26()
-    case 27: assignment27()
-    case 28: assignment28()
-    case 29: assignment29()
-    case 30: assignment30()
-    case 31: assignment31()
+        case 1: assignment1()
+        case 2: assignment2()
+        case 3: assignment3()
+        case 4: assignment4()
+        case 5: assignment5()
+        case 6: assignment6()
+        case 7: assignment7()
+        case 8: assignment8()
+        case 9: assignment9()
+        case 10: assignment10()
+        case 11: assignment11()
+        case 12: assignment12()
+        case 13: assignment13()
+        case 14: assignment14()
+        case 15: assignment15()
+        case 16: assignment16()
+        case 17: assignment17()
+        case 18: assignment18()
+        case 19: assignment19()
+        case 20: assignment20()
+        case 21: assignment21()
+        case 22: assignment22()
+        case 23: assignment23()
+        case 24: assignment24()
+        case 25: assignment25()
+        case 26: assignment26()
+        case 27: assignment27()
+        case 28: assignment28()
+        case 29: assignment29()
+        case 30: assignment30()
+        case 31: assignment31()
+        case 32: assignment32()
+        case 33: assignment33()
+        case 34: assignment34()
+        case 35: assignment35()
+        case 36: assignment36()
+        case 37: assignment37()
+        case 38: assignment38()
+        case 39: assignment39()
+        case 40: assignment40()
         
-    case 99: print("\n Thank you!")
-    default: print("Number needs to be between 1 and ...")
+    default: print("Number needs to be between 1 and 40")
     }
     enterToContinue()
 }
@@ -712,6 +719,78 @@ func assignment31() {
 }
 
 func assignment32() {
+    print ("Input a String to Reverse: ",terminator:"" )
+    let input = String(readLine() ?? "0")
     
+    var reversed: String = ""
+    
+    for n in 0..<input.count {
+        reversed = "\(input[n])\(reversed)"
+    }
+    print(reversed)
 }
 
+func assignment33() {
+    print ("Input a Number to check for Palindrome: ",terminator:"" )
+    let input = String(readLine() ?? "0")
+    
+    if (input.isNumber){
+        var reversed: String = ""
+        
+        for n in 0..<input.count {
+            reversed = "\(input[n])\(reversed)"
+        }
+        
+        if (reversed == input){
+            print ("\(input) IS a palindrome number")
+        }else{
+            print ("\(input) is NOT a palindrome number")
+        }
+        
+    }else {
+        print ("\(input) is not a number")
+    }
+}
+
+func assignment34() {
+    print ("Input a Number : ",terminator:"" )
+    let input = Int(readLine() ?? "0") ?? 0
+    
+    print ("Input a Second Number : ",terminator:"" )
+    let secInput = Int(readLine() ?? "0") ?? 0
+    
+    var found:Bool = false
+    var n:Int = 0
+        
+        while(!found){
+            n+=1
+            if (n%input == 0 && n%secInput == 0){
+                print ("\n The less common multiple of \(input) and \(secInput) is = \(n) ")
+                found = true
+            }
+        }
+}
+
+func assignment35() {
+
+}
+
+func assignment36() {
+
+}
+
+func assignment37() {
+
+}
+
+func assignment38() {
+
+}
+
+func assignment39() {
+
+}
+
+func assignment40() {
+
+}
