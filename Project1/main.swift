@@ -646,28 +646,28 @@ func assignment27() {
     }
 }
 
-
 func assignment28() {
     print ("Input natural number: ",terminator:"" )
     let input = Int(readLine() ?? "0") ?? 0
     
-    var number: String = ""
-    var answer: Int = 0
-    
-    for n in 0...input-1 {
-        number = number+"1"
-        answer = answer + Int(number)!
+    if (input > 1) {
+        var number: String = ""
+        var answer: Int = 0
+        var operation: String = ""
         
-        if (n == input-1){
-            print ("\(number) ", terminator: "")
-        }else{
-            print ("\(number) + ", terminator: "")
+        for i in 0...input-1 {
+            number = number+"1"
+            answer = answer + Int(number)!
+            
+            if (i == 0) {
+                operation = "\(number)"
+            }else{
+                operation = "\(operation) + \(number)"
+            }
+            
         }
-        
+        print ("\(operation) = \(answer)" )
     }
-    
-    print ("= \(answer)" )
-    
 }
 
 func assignment29() {
@@ -678,30 +678,37 @@ func assignment29() {
     var counter:Int
 
     for n in 2...input{
-        
         counter = 0
-        
         for i in 1...n{
-            
-            if (n%i == 0){
-                counter += 1
-            }
-            
+            if (n%i == 0){counter += 1}
         }
-        if (counter<=2) {
-            answer = "\(answer) \(n)"
-        }
-        
+        if (counter<=2) {answer = "\(answer) \(n)"}
     }
     print(answer)
 }
 
 func assignment30() {
-    
+    print ("In contruction")
 }
 
 func assignment31() {
+    print ("Input natural number: ",terminator:"" )
+    let input = Int(readLine() ?? "0") ?? 0
     
+    var xOne: Int = 0
+    var xTwo: Int = 1
+    
+    for _ in 0..<(input/2) {
+        print ("\(xOne) ", terminator: "")
+        xOne = xOne+xTwo
+        print ("\(xTwo) ", terminator: "")
+        xTwo = xTwo+xOne
+    }
+    
+    if (input%2 == 1){
+        print ("\(xOne) ", terminator: "")
+        xOne = xOne+xTwo
+    }
 }
 
 func assignment32() {
