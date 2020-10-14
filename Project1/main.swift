@@ -799,19 +799,38 @@ func assignment35() {
 }
 
 func assignment36() {
-
+    print ("Input a String to Reverse: ",terminator:"" )
+    let input = String(readLine() ?? "0")
+    
+    var reversed: String = ""
+    
+    for n in 0..<input.count {
+        reversed = "\(input[n])\(reversed)"
+    }
+    print(reversed)
 }
 
 func assignment37() {
-
+    print ("Input a String to Upercase: ",terminator:"" )
+    let input = String(readLine() ?? "0")
+    
+    print(input.uppercased())
 }
 
 func assignment38() {
-
+    print ("Input a String to Upercase: ",terminator:"" )
+    let input = String(readLine() ?? "0")
+    
+    print(input.lowercased())
 }
 
 func assignment39() {
-
+    print ("Input a String to Sentence Case: ",terminator:"" )
+    let input = String(readLine() ?? "0")
+    
+    print(input[0].uppercased(), terminator:"")
+    print(input.suffix(input.count-1).lowercased())
+    
 }
 
 func assignment40() {
