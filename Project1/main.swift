@@ -773,6 +773,29 @@ func assignment34() {
 
 func assignment35() {
 
+    print ("Input a Number : ",terminator:"" )
+    let input = Int(readLine() ?? "0") ?? 0
+    
+    print ("Input a Second Number : ",terminator:"" )
+    let secInput = Int(readLine() ?? "0") ?? 0
+    
+    var firstNumber:Int = input
+    var secondNumber:Int = secInput
+    var divisor:Int = 0
+    
+    if (input < secInput){
+        firstNumber = secInput
+        secondNumber = input
+    }
+    
+    while (firstNumber%secondNumber != 0){
+        divisor = firstNumber%secondNumber
+        firstNumber=secondNumber
+        secondNumber=divisor
+    }
+    
+    print("\n The greatest common divisor of \(input) and \(secInput) is = \(secondNumber) ")
+    
 }
 
 func assignment36() {
