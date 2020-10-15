@@ -695,7 +695,31 @@ func assignment29() {
 }
 
 func assignment30() {
-    print ("In contruction")
+    print ("Input a natural number: ",terminator:"" )
+    let input = Int(readLine() ?? "0") ?? 0
+    
+    var counter:Int = 1
+    var line:String
+    var space:String
+    
+    for i in 0...input {
+        
+        line = ""
+        space = ""
+        
+        for _ in 0..<(input-i) {
+            space = "\(space) "
+        }
+        
+        for j in 0..<input {
+            
+            if  j < i {
+                line = "\(line) \(counter)"
+                counter+=1
+            }
+        }
+        print("\(space)\(line)")
+    }
 }
 
 func assignment31() {
