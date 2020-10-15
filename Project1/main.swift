@@ -834,5 +834,58 @@ func assignment39() {
 }
 
 func assignment40() {
-
+    
+    var xTemp:Int = 0
+    var zTemp:Int = 0
+    var commonDen:Int = 0
+    var x:Int = 0
+    var y:Int = 0
+    var z:Int = 0
+    
+    print ("\nInput x1 number")
+    let xOne = Int(readLine() ?? "0") ?? 0
+    print ("Input y1 number")
+    let yOne = Int(readLine() ?? "0") ?? 0
+    print ("Input z1 number")
+    var zOne = (-1) * (Int(readLine() ?? "0") ?? 0)
+    print ("Input x2 number")
+    let xTwo = Int(readLine() ?? "0") ?? 0
+    print ("Input y2 number")
+    let yTwo = Int(readLine() ?? "0") ?? 0
+    print ("Input z2 number")
+    let zTwo = (-1) * (Int(readLine() ?? "0") ?? 0)
+    
+    //Solve first equation
+    if (yOne>yTwo){
+        commonDen = -(yOne/yTwo)
+        
+        xTemp = xTwo*commonDen
+        zTemp = zTwo*commonDen
+        
+        x=xOne+xTemp
+        z=zOne+zTemp
+        
+    }else{
+        commonDen = -(yTwo/yOne)
+        
+        xTemp = xOne*commonDen
+        zTemp = zOne*commonDen
+        
+        x=xTemp+xTwo
+        z=zTemp+zTwo
+    }
+    
+    x=(-z/x)
+    
+    print("x = \(x)")
+    
+    //Solve second equation
+    x = xOne*x
+    
+    zOne=zOne+x
+    
+    y=(-zOne/yOne)
+    
+    print("y = \(y)")
+    
 }
